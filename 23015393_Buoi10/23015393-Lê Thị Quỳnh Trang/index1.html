@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chào mừng du khách</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <h1>Chào mừng du khách</h1>
+    
+    <label for="tenDuKhach">Nhập họ tên:</label><br>
+    <input type="text" id="tenDuKhach"><br><br>
+    
+    <button onclick="hienThiLoiChao()">Hiển thị lời chào</button>
+    
+    <p id="ketQua"></p>
+
+    <script>
+        function hienThiLoiChao() {
+            const tenDuKhach = document.getElementById('tenDuKhach').value;
+            const ketQua = document.getElementById('ketQua');
+            
+            if (tenDuKhach.trim() === '') {
+                ketQua.textContent = 'Vui lòng nhập họ tên của bạn!';
+                ketQua.style.color = '#e74c3c';
+            } else {
+                ketQua.textContent = `Xin chào ${tenDuKhach}, chúc bạn có một chuyến du lịch vui vẻ!`;
+                ketQua.style.color = '0000';
+            }
+        }
+        
+        // Cho phép nhấn Enter để hiển thị lời chào
+        document.getElementById('tenDuKhach').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                hienThiLoiChao();
+            }
+        });
+    </script>
+</body>
+</html>

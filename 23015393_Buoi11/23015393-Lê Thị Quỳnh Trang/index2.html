@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Tour Du Lịch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 540px;
+            padding: 15px;
+            font-size: 18px;
+            border: 2px solid #666;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 24px;
+            background-color: #e0e0e0;
+            border: 2px solid #666;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #d0d0d0;
+        }
+
+        .error {
+            color: red;
+            font-size: 16px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .success {
+            color: green;
+            font-size: 18px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form đặt tour cơ bản</h1>
+    
+    <form id="tourForm">
+        <div class="form-group">
+            <label for="hoTen">Họ tên:</label>
+            <input type="text" id="hoTen">
+            <div class="error" id="errorHoTen"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="soDienThoai">Số điện thoại:</label>
+            <input type="text" id="soDienThoai">
+            <div class="error" id="errorSoDienThoai"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="soNguoi">Số người:</label>
+            <input type="number" id="soNguoi">
+            <div class="error" id="errorSoNguoi"></div>
+        </div>
+
+        <button type="submit">Đặt tour</button>
+    </form>
+
+    <div class="success" id="successMessage">
+        Đặt tour thành công!
+    </div>
+
+    <script>
+        document.getElementById('tourForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Lấy giá trị từ form
+            const hoTen = document.getElementById('hoTen').value.trim();
+            const soDienThoai = document.getElementById('soDienThoai').value.trim();
+            const soNguoi = document.getElementById('soNguoi').value.trim();
+            
+            // Ẩn tất cả thông báo lỗi và thành công
+            document.querySelectorAll('.error').forEach(el => el.style.display = 'none');
+            document.getElementById('successMessage').style.display = 'none';
+            
+            let isValid = true;
+            
+            // Kiểm tra họ tên
+            if (hoTen === '') {
+                document.getElementById('errorHoTen').textContent = 'Vui lòng nhập họ tên';
+                document.getElementById('errorHoTen').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Kiểm tra số điện thoại
+            if (soDienThoai === '') {
+                document.getElementById('errorSoDienThoai').textContent = 'Vui lòng nhập số điện thoại';
+                document.getElementById('errorSoDienThoai').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Kiểm tra số người
+            if (soNguoi === '' || Number(soNguoi) <= 0) {
+                document.getElementById('errorSoNguoi').textContent = 'Số người phải lớn hơn 0';
+                document.getElementById('errorSoNguoi').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Nếu tất cả hợp lệ
+            if (isValid) {
+                alert('Đặt tour thành công');
+                document.getElementById('tourForm').reset();
+            }
+        });
+    </script>
+</body>
+</html>

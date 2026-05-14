@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin tour</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            padding: 20px;
+            background-color: #d3d3d3;
+            margin: 0;
+        }
+        h1 {
+            color: #000;
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+        #tourInfo {
+            font-size: 24px;
+            color: #555;
+            margin: 30px 0;
+        }
+        .button-container {
+            display: flex;
+            gap: 15px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #d3d3d3;
+            color: #555;
+            border: 2px solid #888;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+        }
+        button:hover {
+            background-color: #c0c0c0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Thông tin tour</h1>
+    
+    <div id="tourInfo">
+        <p>Vui lòng bấm nút để xem thông tin tour.</p>
+    </div>
+    
+    <div class="button-container">
+        <button onclick="showDaLat()">Tour Đà Lạt</button>
+        <button onclick="showPhuQuoc()">Tour Phú Quốc</button>
+        <button onclick="showHaNoi()">Tour Hà Nội</button>
+    </div>
+
+    <script>
+        function showDaLat() {
+            document.getElementById('tourInfo').innerHTML = 
+                '<p>Tour Đà Lạt 3 ngày 2 đêm, phù hợp cho du khách yêu thích khí hậu mát mẻ.</p>';
+        }
+
+        function showPhuQuoc() {
+            document.getElementById('tourInfo').innerHTML = 
+                '<p>Tour Phú Quốc nghỉ dưỡng biển đảo, phù hợp cho gia đình và nhóm bạn.</p>';
+        }
+
+        function showHaNoi() {
+            document.getElementById('tourInfo').innerHTML = 
+                '<p>Tour Hà Nội city tour, tham quan phố cổ, Hồ Gươm và các di tích lịch sử.</p>';
+        }
+    </script>
+</body>
+</html>

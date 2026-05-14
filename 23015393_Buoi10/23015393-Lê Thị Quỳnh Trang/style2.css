@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: white;
+    padding: 40px;
+}
+
+.container {
+    max-width: 600px;
+}
+
+h1 {
+    color: #000;
+    margin-bottom: 40px;
+    font-size: 54px;
+    font-weight: bold;
+}
+
+.price-info {
+    margin-bottom: 40px;
+}
+
+.price-info p {
+    color: #000;
+    font-size: 32px;
+}
+
+.input-section {
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    color: #000;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+input[type="number"] {
+    width: 500px;
+    padding: 12px 15px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: 28px;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #000;
+}
+
+button {
+    padding: 12px 30px;
+    background: #e0e0e0;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: 28px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+button:hover {
+    background: #d0d0d0;
+}
+
+.result {
+    font-size: 32px;
+    color: #000;
+}

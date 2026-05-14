@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Đà Nẵng</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            font-size: 18px;
+        }
+
+        .tour-card {
+            background: white;
+            max-width: 800px;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .tour-details {
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .tour-details h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: 28px;
+        }
+
+        .tour-details h3 {
+            color: #333;
+            margin-bottom: 10px;
+            margin-top: 15px;
+            font-weight: normal;
+        }
+
+        .tour-details p {
+            color: black;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            color: #000;
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 8px 16px;
+            border: 1px solid #ccc;
+            background: white;
+            font-size: 18px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        button:hover {
+            background: #f0f0f0;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="tour-card">
+        <h1>Tour Đà Nẵng 3 ngày 2 đêm</h1>
+        
+        <p class="description">
+            Khám phá thành phố biển Đà Nẵng với nhiều điểm đến hấp dẫn.
+        </p>
+
+        <div class="buttons">
+            <button id="btnShow" onclick="showDetails()">Xem chi tiết</button>
+            <button id="btnHide" onclick="hideDetails()">Ẩn chi tiết</button>
+        </div>
+
+        <div id="tourDetails" class="tour-details hidden">
+            <h2>Chi tiết tour</h2>
+            
+            <p>Ngày 1: Tham quan cầu Rồng và biển Mỹ Khê.</p>
+            
+            <p>Ngày 2: Khám phá Bà Nà Hills.</p>
+            
+            <p>Ngày 3: Mua sắm đặc sản và kết thúc tour.</p>
+            
+            <p class="price">Giá tour: 3.500.000 VNĐ</p>
+        </div>
+    </div>
+
+    <script>
+        function showDetails() {
+            document.getElementById('tourDetails').classList.remove('hidden');
+        }
+
+        function hideDetails() {
+            document.getElementById('tourDetails').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

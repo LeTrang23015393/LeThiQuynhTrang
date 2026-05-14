@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký thông tin du khách</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #000;
+            margin-bottom: 30px;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #000;
+            font-size: 20px;
+        }
+
+        input[type="text"] {
+            width: 400px;
+            padding: 10px;
+            border: 2px solid #666;
+            border-radius: 4px;
+            font-size: 18px;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #333;
+        }
+
+        .submit-btn {
+            padding: 10px 30px;
+            background-color: #ddd;
+            color: #000;
+            border: 2px solid #666;
+            border-radius: 4px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Đăng ký thông tin du khách</h1>
+        
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="fullName">Họ tên:</label>
+                <input type="text" id="fullName" name="fullName">
+            </div>
+            
+            <button type="submit" class="submit-btn">Gửi thông tin</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const fullName = document.getElementById('fullName').value.trim();
+            
+            if (fullName === '') {
+                alert('Vui lòng nhập họ tên');
+            } else {
+                alert('Gửi thông tin thành công');
+            }
+        });
+    </script>
+</body>
+</html>
